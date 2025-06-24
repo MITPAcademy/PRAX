@@ -9,7 +9,7 @@ import yaml
 
 from tex.builder import make_tex
 from tex.spinner import Spinner
-from util import sha256_of_file, add_pdflatex_to_path
+from util.util import sha256_of_file, add_pdflatex_to_path
 
 def run_gui():
     root = tk.Tk()

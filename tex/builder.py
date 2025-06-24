@@ -53,7 +53,6 @@ def make_tex(yaml_data):
     id_ = yaml_data.get("ID", "N/A")
     title = yaml_data.get("title", "Document Title")
     subtitle = yaml_data.get("subtitle", "")
-    # O título e subtítulo devem ser escapados para evitar erros de alinhamento (&)
     title = escape_tex(title)
     subtitle = escape_tex(subtitle)
     questions = yaml_data.get("questions", [])
