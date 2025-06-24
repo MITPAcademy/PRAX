@@ -1,0 +1,11 @@
+def escape_tex(text):
+    return (text.replace("&", r"\&")
+                .replace("%", r"\%")
+                .replace("$", r"\$")
+                .replace("#", r"\#")
+                .replace("_", r"\_")
+                .replace("{", r"\{")
+                .replace("}", r"\}")
+                .replace("~", r"\textasciitilde{}")
+                .replace("^", r"\^{}")
+                .replace("\\", r"\textbackslash{}"))
