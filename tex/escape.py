@@ -1,12 +1,8 @@
 import re
 
 def escape_tex(text):
-    math_patterns = [
-        (r"\$\$(.*?)\$\$", re.DOTALL),    # $$ ... $$
-        (r"\\\((.*?)\\\)", re.DOTALL),    # \( ... \)
-        (r"\\\[(.*?)\\\]", re.DOTALL),    # \[ ... \]
-    ]
-
+    # Patterns to match: $$...$$, \( ... \), \[ ... \]
+    pattern = r"(\$\$.*?\$\$|\\\(.*?\\\)|\\\[.*?\\\])"
     mapping = {
         "&": r"\&",
         "%": r"\%",
@@ -19,22 +15,11 @@ def escape_tex(text):
         "^": r"\^{}",
         "\\": r"\textbackslash{}",
     }
-
     def escape_chunk(chunk):
         return "".join(mapping.get(char, char) for char in chunk)
-
-    tokens = []
-    def replacer(match):
-        tokens.append(match.group(0))
-        return f"__MATH_TOKEN_{len(tokens)-1}__"
-
-    text_ = text
-    for pat, flags in math_patterns:
-        text_ = re.sub(pat, replacer, text_, flags=flags)
-
-    text_ = escape_chunk(text_)
-
-    for idx, val in enumerate(tokens):
-        text_ = text_.replace(f"__MATH_TOKEN_{idx}__", val)
-
-    return text_
+    parts = re.split(pattern, text, flags=re.DOTALL)
+    for i, part in enumerate(parts):
+        if re.fullmatch(pattern, part, flags=re.DOTALL):
+            continue
+        parts[i] = escape_chunk(part)
+    return "".join(parts)
