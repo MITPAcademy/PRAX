@@ -7,13 +7,14 @@
 ## Overview
 
 **Exam Generator** is a cross-platform Python tool that quickly converts a simple YAML file describing an exam into a beautifully formatted LaTeX (`.tex`) file or a ready-to-print PDF.  
-With a user-friendly graphical interface (GUI), you can select your YAML file, choose output format, and instantly get a professional-looking exam and answer sheet — with your institution's logo and custom metadata.
+With a user-friendly graphical interface (GUI) or command-line interface (CLI), you can select your YAML file, choose output format, and instantly get a professional-looking exam and answer sheet — with your institution's logo and custom metadata.
 
 ---
 
 ## ✨ Features
 
 - **🖱️ Easy-to-use GUI** — No command-line required. Select files, choose output, done!
+- **⌨️ Command-line Mode** — Power users can run batch conversions and scripts directly.
 - **🔐 Secure Output** — PDF files are generated locally. SHA-256 hash is displayed for integrity.
 - **📄 LaTeX & PDF Support** — Output directly to `.tex` for custom edits, or straight to `.pdf`.
 - **🎨 Modern Exam Design** — Includes custom logo, clear formatting, and answer sheet.
@@ -81,16 +82,34 @@ questions:
 
 ## 🖥️ Usage
 
+You can use either the GUI or the command-line interface.
+
+### Graphical User Interface (GUI)
+
 Just run:
 
 ```bash
 python app.py
 ```
 
-- **Step 1:** Select your YAML file when prompted.
+- **Step 1:** Select your YAML file(s) when prompted.
 - **Step 2:** Choose output format: `tex` or `pdf`.
 - **Step 3:** Choose an output directory.
 - **Step 4:** Collect your `.tex` or `.pdf` file — and, for PDF, see the SHA-256 hash for verification.
+
+### Command-Line Interface (CLI)
+
+You can also generate files directly from the terminal. The general usage is:
+
+```bash
+python app.py --pdf exam1.yaml ./output
+python app.py --tex exam1.yaml exam2.yaml ./output
+python app.py -help
+```
+
+- `--pdf`: Generate PDF(s) from YAML file(s).
+- `--tex`: Generate LaTeX `.tex` file(s) from YAML file(s).
+- `-help`: Show usage information.
 
 > **Note:** For PDF output, make sure `pdflatex` is installed and available in your system PATH.
 
