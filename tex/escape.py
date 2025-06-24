@@ -1,7 +1,6 @@
 import re
 
 def escape_tex(text):
-    # Patterns to match: $$...$$, \( ... \), \[ ... \]
     pattern = r"(\$\$.*?\$\$|\\\(.*?\\\)|\\\[.*?\\\])"
     mapping = {
         "&": r"\&",
@@ -14,15 +13,11 @@ def escape_tex(text):
         "^": r"\^{}",
         "\\": r"\textbackslash{}",
     }
-
     def escape_chunk(chunk):
         chunk = "".join(mapping.get(char, char) for char in chunk)
-        chunk = re.sub(r'(?<!\\)_', r'\_', chunk)
-        return chunk
-
+        return re.sub(r'(?<!\\)_', r'\_', chunk)
     parts = re.split(pattern, text, flags=re.DOTALL)
     for i, part in enumerate(parts):
-        if re.fullmatch(pattern, part or "", flags=re.DOTALL):
-            continue
-        parts[i] = escape_chunk(part)
+        if part and not re.fullmatch(pattern, part, flags=re.DOTALL):
+            parts[i] = escape_chunk(part)
     return "".join(parts)
