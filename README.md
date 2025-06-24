@@ -48,25 +48,25 @@ pip install -r requirements.txt
 Here's a sample `exam.yaml`:
 
 ```yaml
-Creator: "ForgeAI"
-ID: "MATH-2024-01"
-title: "Calculus Midterm"
-subtitle: "Differential Equations"
+creator: Jane Doe
+id: EXAM-001
+title: Physics Exam
+subtitle: Mechanics and Thermodynamics
 questions:
   - id: 1
-    enunciado: "What is the derivative of x^2?"
-    alternativas:
-      A: "x"
-      B: "2x"
-      C: "x^2"
-      D: "2"
+    statement: What is the acceleration due to gravity on Earth?
+    alternatives:
+      A: 9.8 m/s^2
+      B: 10 m/s^2
+      C: 8.9 m/s^2
+      D: 7.8 m/s^2
   - id: 2
-    enunciado: "Solve the equation: y' = 3y"
-    alternativas:
-      A: "y = 3x"
-      B: "y = e^{3x}"
-      C: "y = x^3"
-      D: "y = 3^x"
+    statement: Which law explains the relationship between volume and pressure of a gas at constant temperature?
+    alternatives:
+      A: Boyle's law
+      B: Charles's law
+      C: Avogadro's law
+      D: Gay-Lussac's law
 ```
 
 - **Creator**: Author of the exam.
@@ -74,8 +74,8 @@ questions:
 - **title**/**subtitle**: Shown at the top of the exam.
 - **questions**: List of questions, each with:
   - **id**: Question number.
-  - **enunciado**: The statement of the question.
-  - **alternativas**: Dict of answer choices (A, B, C, ...).
+  - **statement**: The statement of the question.
+  - **alternatives**: Dict of answer choices (A, B, C, ...).
 
 ---
 

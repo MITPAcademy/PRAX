@@ -8,8 +8,28 @@ TEX_TEMPLATE = r"""
 \usepackage{{titlesec}}
 \usepackage{{enumitem}}
 \usepackage{{tikz}}
+\usepackage[most]{{tcolorbox}}
 \definecolor{{mitred}}{{HTML}}{{D7261E}}
 \definecolor{{mitblack}}{{HTML}}{{000000}}
+\tcbset{{
+  examquestion/.style={{
+    width=\textwidth,
+    colback=white,
+    colframe=mitred,
+    boxrule=0.8pt,
+    arc=3pt,
+    outer arc=3pt,
+    left=2mm,
+    right=2mm,
+    top=2mm,
+    bottom=2mm,
+    boxsep=2pt,
+    before skip=1em,
+    after skip=2em,
+    enhanced,
+    breakable,
+  }}
+}}
 \pagestyle{{empty}}
 \begin{{document}}
 \noindent
@@ -53,6 +73,6 @@ TEX_TEMPLATE = r"""
 \end{{minipage}}
 \vspace{{1em}}
 \section*{{Answer Sheet}}
-{gabarito_latex}
+{answer_sheet_latex}
 \end{{document}}
 """
