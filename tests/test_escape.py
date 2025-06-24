@@ -7,7 +7,7 @@ from tex.escape import escape_tex
     ("$5 #1", r"\$5 \#1"),
     ("under_score_name", r"under\_score\_name"),
     ("{braces}", r"\{braces\}"),
-    ("~tilde^", r"\textasciitilde{}\^{}"),
+    ("~tilde^", r"\textasciitilde{}tilde\^{}"),
     (r"back\slash", r"back\textbackslash{}slash"),
     ("no special chars", "no special chars"),
 ])
