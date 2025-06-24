@@ -1,6 +1,6 @@
 import tempfile
 import os
-from PRAX.util import sha256_of_file
+from util import sha256_of_file
 
 def test_sha256_of_file():
     # Create a temp file and calculate hash

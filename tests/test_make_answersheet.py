@@ -1,4 +1,4 @@
-from PRAX.tex.builder import make_gabarito_latex
+from tex.builder import make_gabarito_latex
 
 def test_make_gabarito_latex_renders_all_questions():
     questions = [

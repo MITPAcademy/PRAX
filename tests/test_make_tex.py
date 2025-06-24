@@ -1,4 +1,4 @@
-from PRAX.tex.builder import make_tex
+from tex.builder import make_tex
 
 def test_make_tex_renders_metadata_and_questions():
     yaml_data = {

@@ -1,4 +1,4 @@
-from PRAX.tex.builder import make_questions_latex
+from tex.builder import make_questions_latex
 
 def test_make_questions_latex_basic():
     questions = [

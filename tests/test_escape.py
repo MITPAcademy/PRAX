@@ -1,5 +1,5 @@
 import pytest
-from PRAX.tex.escape import escape_tex
+from tex.escape import escape_tex
 
 @pytest.mark.parametrize("text,expected", [
     ("Hello & World", r"Hello \& World"),

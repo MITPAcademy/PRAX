@@ -1,5 +1,5 @@
 import time
-from PRAX.tex.spinner import Spinner
+from tex.spinner import Spinner
 
 def test_spinner_start_and_stop(capsys):
     spinner = Spinner("Loading")
