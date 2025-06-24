@@ -84,7 +84,7 @@ questions:
 Just run:
 
 ```bash
-python -m exam_generator
+python app.py
 ```
 
 - **Step 1:** Select your YAML file when prompted.
